@@ -6,5 +6,5 @@
   "uniqueName": "xen.UnofficialJam3Entry",
   "version": "0.1.0",
   "owmlVersion": "2.9.0",
-  "dependencies": ["xen.NewHorizons"]
+  "dependencies": [ "xen.NewHorizons", "xen.ModJam3" ]
 }
