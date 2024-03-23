@@ -80,8 +80,8 @@
   <DialogueNode>
     <Name>Planet</Name>
     <Dialogue>
-      <Page>This is Gravelrock! It's like a rock, but with gravel, or something.</Page>
-      <Page>I don't know, I didn't name it. Built a cabin here tho!</Page>
+      <Page>This is Gravelrock! It's like a rock, but with gravel. A lot of gravel. And dust.</Page>
+      <Page>I don't know, I didn't name it. Built a cabin here tho! This is just about the only nice looking place here.</Page>
       <Page>I think the planet used to be pretty geologically active. There are a lot of dormant volcanos and geysers around. But nothing much moves around here except the dust.</Page>
     </Dialogue>
     <DialogueOptionsList>
