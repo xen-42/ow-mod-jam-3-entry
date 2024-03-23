@@ -15,6 +15,9 @@ internal class PartyHandler : MonoBehaviour
     private Dictionary<string, GameObject> _invitationIDs = new();
     private HashSet<string> _uniqueIDs = new();
 
+    private int _inviteCount = 0;
+    private int _gravelrockInviteCount = 0;
+
     public void Start()
     {
         // CharacterDialogueTrees are late initialized
@@ -79,6 +82,19 @@ internal class PartyHandler : MonoBehaviour
         if (!string.IsNullOrEmpty(_queuedConditionID) && _invitationIDs.TryGetValue(_queuedConditionID, out var characterObj))
         {
             UnofficialJam3Entry.Helper.Console.WriteLine($"Moving {_queuedConditionID} to the party!");
+
+            if (characterObj.GetAttachedOWRigidbody().name == "Gravelrock_Body")
+            {
+                _gravelrockInviteCount++;
+            }
+            _inviteCount++;
+
+            var hasAllFriends = _gravelrockInviteCount >= 4;
+            var hasBonusFriends = _inviteCount > _gravelrockInviteCount;
+
+            DialogueConditionManager.SharedInstance.SetConditionState("HasSomePartyGoers", hasAllFriends && !hasBonusFriends);
+            DialogueConditionManager.SharedInstance.SetConditionState("HasManyPartyGoers", hasAllFriends && hasBonusFriends);
+
             StartCoroutine(Coroutine(characterObj));
             _queuedConditionID = null;
         }
