@@ -1,0 +1,45 @@
+﻿<DialogueTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/dialogue_schema.xsd">
+  <NameField>Granite</NameField>
+
+  <DialogueNode>
+    <Name>START</Name>
+    <EntryCondition>DEFAULT</EntryCondition>
+    <Dialogue>
+      <Page>Oh, a visitor. Welcome to my camp!</Page>
+    </Dialogue>
+
+    <DialogueTarget>GraniteMenu</DialogueTarget>
+    <SetCondition>SaidHiToGranite</SetCondition>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>GraniteMain_Secondary</Name>
+    <EntryCondition>SaidHiToGranite</EntryCondition>
+    <Dialogue>
+      <Page>Oh it's you again.</Page>
+    </Dialogue>
+    <DialogueTarget>GraniteMenu</DialogueTarget>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>GraniteMenu</Name>
+    <Dialogue>
+      <Page>What's new?</Page>
+    </Dialogue>
+
+    <DialogueOptionsList>
+      <DialogueOption>
+        <Text>Talk to you later.</Text>
+        <DialogueTarget>Goodbye</DialogueTarget>
+      </DialogueOption>
+    </DialogueOptionsList>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>Goodbye</Name>
+    <Dialogue>
+      <Page>See you around!</Page>
+    </Dialogue>
+  </DialogueNode>
+
+</DialogueTree>

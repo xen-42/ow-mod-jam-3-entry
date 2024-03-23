@@ -1,16 +1,466 @@
 ﻿{
-    "$schema": "https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/body_schema.json",
-    "name": "Ernesto Land",
-    "starSystem": "Jam3",
-    "Base": {
-        "surfaceSize": 100,
-        "groundSize": 100,
-        "surfaceGravity": 15,
-        "hasMapMarker": true
-    },
-    "canShowOnTitle": false,
-    "Orbit": {
-        "primaryBody": "Jam 3 Sun",
-        "semiMajorAxis": 1000
+  "$schema": "https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/body_schema.json",
+  "name": "Gravelrock",
+  "starSystem": "Jam3",
+  "Base": {
+    "surfaceSize": 100,
+    "surfaceGravity": 9,
+    "hasMapMarker": true,
+    "soiOverride": 220
+  },
+  "canShowOnTitle": false,
+  "Orbit": {
+    "primaryBody": "Jam 3 Sun",
+    "semiMajorAxis": 1000,
+    "siderealPeriod": 3
+  },
+  "Atmosphere": {
+    "hasTrees": true,
+    "useAtmosphereShader": true,
+    "fogSize": 150,
+    "fogDensity": 0.1,
+    "hasOxygen": true,
+    "size": 150
+  },
+  "AmbientLights": [
+    {
+      "outerRadius": 150,
+      "intensity": 1,
+      "innerRadius": 80
     }
+  ],
+  "Spawn": {
+    "playerSpawn": {
+      "position": {
+        "x": 106.6887,
+        "y": -14.62274,
+        "z": -3.102513
+      },
+      "rotation": {
+        "x": 75.11826,
+        "y": 236.9185,
+        "z": 144.5897
+      },
+      "startWithSuit": true
+    },
+    "shipSpawn": {
+      "position": {
+        "x": 74.31335,
+        "y": -54.23048,
+        "z": 39.19927
+      },
+      "rotation": {
+        "x": 12.36383,
+        "y": 160.3229,
+        "z": 123.7232
+      }
+    }
+  },
+  "Sand": {
+    "size": 100,
+    "tint": {
+      "r": 100,
+      "g": 100,
+      "b": 100
+    }
+  },
+  "Props": {
+    "shuttles": [
+      {
+        "position": {
+          "x": -60.65995,
+          "y": -60.9912,
+          "z": 50.99457
+        },
+        "rotation": {
+          "x": 320.6242,
+          "y": 259.2238,
+          "z": 217.9062
+        },
+        "id": "gravelrock"
+      }
+    ],
+    "gravityCannons": [
+      {
+        "position": {
+          "x": 35.7472,
+          "y": -0.3631,
+          "z": -86.7287
+        },
+        "rotation": {
+          "x": 4.0275,
+          "y": 34.6402,
+          "z": 269.6077
+        },
+        "shuttleID": "gravelrock",
+        "detailed": false,
+        "controls": {
+          "position": {
+            "x": 47.42521,
+            "y": -19.99656,
+            "z": -85.73791
+          },
+          "rotation": {
+            "x": 71.05112,
+            "y": 24.57879,
+            "z": 231.9899
+          }
+        },
+        "computer": {
+          "position": {
+            "x": 52.66287,
+            "y": -24.27727,
+            "z": -81.46925
+          },
+          "rotation": {
+            "x": 75.82178,
+            "y": 319.2577,
+            "z": 172.3736
+          }
+        }
+      }
+    ],
+    "details": [
+      // Geometry
+      {
+        "path": "Moon_Body/Sector_THM/Geo_THM",
+        "removeComponents": true,
+        "keepLoaded": true,
+        "position": {
+          "x": 35
+        },
+        "rotation": {
+          "x": 21.42,
+          "y": 293.68,
+          "z": 176.18
+        }
+      },
+      {
+        "path": "Moon_Body/Sector_THM/DetailPatches_THM",
+        "removeComponents": true,
+        "keepLoaded": true,
+        "parentPath": "Sector/Geo_THM",
+        "isRelativeToParent": true
+      },
+      {
+        "path": "Moon_Body/Sector_THM/Props_THM",
+        "removeComponents": true,
+        "keepLoaded": true,
+        "parentPath": "Sector/Geo_THM",
+        "isRelativeToParent": true
+      },
+      {
+        "path": "VolcanicMoon_Body/Sector_VM/Geometry_VM/Terrain_VM",
+        "removeComponents": true,
+        "keepLoaded": true,
+        "scale": 0.9
+      },
+      // Granite's camp
+      {
+        "path": "Moon_Body/Sector_THM/Interactables_THM/Effects_HEA_Campfire",
+        "position": {
+          "x": 99.15435,
+          "y": -22.19643,
+          "z": -3.66223
+        },
+        "rotation": {
+          "x": 290.1041,
+          "y": 120.2157,
+          "z": 156.6677
+        }
+      },
+      {
+        "path": "",
+        "position": {
+          "x": 100.9378,
+          "y": -17.4635,
+          "z": -0.4735
+        },
+        "rotation": {
+          "x": 59.061,
+          "y": 241.9627,
+          "z": 144.785
+        },
+        "rename": "Granite"
+      },
+      {
+        "path": "BrittleHollow_Body/Sector_BH/Sector_Crossroads/Characters_Crossroads/Traveller_HEA_Riebeck/Traveller_HEA_Riebeck_ANIM_Talking",
+        "parentPath": "Sector/Granite",
+        "isRelativeToParent": true,
+        "rename": "GraniteAnim"
+      },
+      // Hal and ship
+      {
+        "path": "GabbroShip_Body/Sector_GabbroShip",
+        "position": {
+          "x": 19.89224,
+          "y": -83.46854,
+          "z": 51.35467
+        },
+        "rotation": {
+          "x": 335.6441,
+          "y": 334.4963,
+          "z": 203.6192
+        },
+        "rename": "CrashedShip"
+      },
+      {
+        "path": "TimberHearth_Body/Sector_TH/Sector_Village/Sector_Observatory/Characters_Observatory/Character_HEA_Hal_Museum/Villager_HEA_Hal_ANIM_Museum",
+        "position": {
+          "x": 14.05187,
+          "y": -79.70152,
+          "z": 58.73853
+        },
+        "rotation": {
+          "x": 347.3929,
+          "y": 300.6203,
+          "z": 215.2436
+        },
+        "rename": "Quartz"
+      },
+      // Ernesto
+      {
+        "path": "Anglerfish_Body/Beast_Anglerfish",
+        "position": {
+          "x": -20.8467,
+          "y": 30.46,
+          "z": -94.381
+        },
+        "rotation": {
+          "x": 300.2634,
+          "y": 313.4154,
+          "z": 55.3369
+        },
+        "scale": 0.02,
+        "removeChildren": [
+          "B_angler_root/B_angler_body01/B_angler_body02/B_angler_antenna01/B_angler_antenna02/B_angler_antenna03/B_angler_antenna04/B_angler_antenna05/B_angler_antenna06/B_angler_antenna07/B_angler_antenna08/B_angler_antenna09/B_angler_antenna10/B_angler_antenna11/B_angler_antenna12_end"
+        ],
+        "rename": "Ernesto"
+      },
+      {
+        "rename": "ErnestoCollision",
+        "path": "Anglerfish_Body/Beast_Anglerfish_Collision",
+        "scale": 0.02,
+        "parentPath": "Sector/Ernesto",
+        "isRelativeToParent": true
+      },
+      // Cauliflower
+      {
+        "rename": "Cauliflower",
+        "path": "QuantumMoon_Body/Sector_QuantumMoon/State_EYE/Interactables_EYEState/ConversationPivot/Character_NOM_Solanum/Nomai_ANIM_SkyWatching_Idle",
+        "position": {
+          "x": -59.7359,
+          "y": -49.43971,
+          "z": 63.14536
+        },
+        "rotation": {
+          "x": 42.19987,
+          "y": 195.5432,
+          "z": 228.135
+        }
+      },
+      // The visitor
+      {
+        "path": "RingWorld_Body/Sector_RingWorld/Sector_DarkSideDockingBay/Props_DarkSideDockingBay/OtherComponentsGroup/DockedShip (2)/Structure_IP_GhostShip_v3",
+        "position": {
+          "x": 2.0826,
+          "y": 91.063,
+          "z": 20.2138
+        },
+        "rotation": {
+          "x": 359.0478,
+          "y": 12.4717,
+          "z": 359.1308
+        },
+        "rename": "CrashedUFO"
+      },
+      {
+        "rename": "The_Visitor",
+        "path": "DreamWorld_Body/Sector_DreamWorld/Sector_DreamZone_2/Ghosts_DreamZone_2/GhostNodeMap_HornetHouse/Prefab_IP_GhostBird_Hornet/Ghostbird_IP_ANIM",
+        "position": {
+          "x": 15.64537,
+          "y": 95.73295,
+          "z": 24.29867
+        },
+        "rotation": {
+          "x": 353.3934,
+          "y": 280.2158,
+          "z": 344.5211
+        }
+      },
+      // Random details
+      {
+        "path": "QuantumMoon_Body/Sector_QuantumMoon/State_TH/Interactables_THState/Crater_Surface/Surface_QGeysers/QuantumGeyser_Big/Terrain_TH_SurfaceGeyser_Big (1)",
+        "position": {
+          "x": 74.01562,
+          "y": -10.18363,
+          "z": -66.4679
+        },
+        "rotation": {
+          "x": 3.6409,
+          "y": 41.55142,
+          "z": 264.1432
+        }
+      },
+      {
+        "path": "QuantumMoon_Body/Sector_QuantumMoon/State_TH/Interactables_THState/Crater_Surface/Surface_QGeysers/QuantumGeyser_Big/Terrain_TH_SurfaceGeyser_Big (1)",
+        "position": {
+          "x": -63.11502,
+          "y": -52.16178,
+          "z": -57.4077
+        },
+        "rotation": {
+          "x": 20.04169,
+          "y": 124.8242,
+          "z": 236.2727
+        }
+      },
+      {
+        "path": "QuantumMoon_Body/Sector_QuantumMoon/State_TH/Interactables_THState/Crater_Surface/Surface_QGeysers/QuantumGeyser_Big/Terrain_TH_SurfaceGeyser_Big (1)",
+        "position": {
+          "x": -93.39816,
+          "y": 33.30115,
+          "z": -12.9544
+        },
+        "rotation": {
+          "x": 60.01405,
+          "y": 209.8416,
+          "z": 311.7826
+        }
+      },
+      {
+        "path": "QuantumMoon_Body/Sector_QuantumMoon/State_TH/Interactables_THState/Crater_Surface/Surface_QGeysers/QuantumGeyser_Big/Terrain_TH_SurfaceGeyser_Big (1)",
+        "position": {
+          "x": -46.2716,
+          "y": 33.2304,
+          "z": 82.18685
+        },
+        "rotation": {
+          "x": 305.273,
+          "y": 210.7455,
+          "z": 305.1309
+        }
+      },
+      {
+        "path": "QuantumMoon_Body/Sector_QuantumMoon/State_TH/Interactables_THState/Crater_Surface/Surface_QGeysers/QuantumGeyser_Big/Terrain_TH_SurfaceGeyser_Big (1)",
+        "position": {
+          "x": 22.15154,
+          "y": -57.41248,
+          "z": -78.82333
+        },
+        "rotation": {
+          "x": 321.3326,
+          "y": 108.4363,
+          "z": 222.666
+        }
+      },
+      {
+        "rename": "SecretRecording",
+        "path": "Moon_Body/Sector_THM/Interactables_THM/Prefab_HEA_Recorder",
+        "position": {
+          "x": -94.72735,
+          "y": 34.2506,
+          "z": -13.31269
+        },
+        "rotation": {
+          "x": 317.4243,
+          "y": 11.02546,
+          "z": 63.14756
+        }
+      },
+      {
+        "rename": "Explosion",
+        "path": "Ship_Body/Effects/Explosion_Ship",
+        "parentPath": "Sector/SecretRecording",
+        "isRelativeToParent": true
+      }
+    ],
+    "scatter": [
+      {
+        "path": "QuantumMoon_Body/Sector_QuantumMoon/State_HT/Interactables_HTState/Interactables_CTState/CTState_Q_Objects/CTState_QCactus/Q_Cactus/Prefab_HGT_Cactus_Single_A",
+        "count": 20,
+        "seed": 1,
+        "preventOverlap": true
+      },
+      {
+        "path": "QuantumMoon_Body/Sector_QuantumMoon/State_HT/Interactables_HTState/Interactables_CTState/CTState_Q_Objects/CTState_QCactus/Q_Cactus/Prefab_HGT_Cactus_Single_A",
+        "count": 20,
+        "seed": 1,
+        "preventOverlap": true,
+        "scale": 0.6
+      }
+    ],
+    "dialogue": [
+      {
+        "position": {
+          "x": 0,
+          "y": 1.6,
+          "z": 0
+        },
+        "pathToAnimController": "Sector/Granite/GraniteAnim",
+        "isRelativeToParent": true,
+        "xmlFile": "planets/text/Granite.xml"
+      },
+      {
+        "position": {
+          "x": 0,
+          "y": 1.6,
+          "z": 0
+        },
+        "pathToAnimController": "Sector/Quartz",
+        "isRelativeToParent": true,
+        "xmlFile": "planets/text/Quartz.xml"
+      },
+      {
+        "position": {
+          "x": 0,
+          "y": 1.6,
+          "z": 0
+        },
+        "pathToAnimController": "Sector/Cauliflower",
+        "isRelativeToParent": true,
+        "xmlFile": "planets/text/Cauliflower.xml"
+      },
+      {
+        "position": {
+          "x": 0,
+          "y": 2.6,
+          "z": 0
+        },
+        "pathToAnimController": "Sector/The_Visitor",
+        "isRelativeToParent": true,
+        "xmlFile": "planets/text/TheVisitor.xml"
+      },
+      {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "pathToAnimController": "Sector/Ernesto",
+        "isRelativeToParent": true,
+        "xmlFile": "planets/text/Ernesto.xml",
+        "radius": 2,
+        "range": 4
+      },
+      {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "pathToAnimController": "Sector/SecretRecording",
+        "isRelativeToParent": true,
+        "xmlFile": "planets/text/SecretRecording.xml"
+      }
+    ],
+    "audioSources": [
+      {
+        "audio": "OW_TravelerTheme_banjo",
+        "track": "environment",
+        "isRelativeToParent": true,
+        "parentPath": "Sector/Granite"
+      }
+    ]
+  }
 }

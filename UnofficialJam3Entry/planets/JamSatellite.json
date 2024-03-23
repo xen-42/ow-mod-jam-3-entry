@@ -1,0 +1,38 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/body_schema.json",
+  "name": "Gravelrock Communication Satellite",
+  "starSystem": "Jam3",
+  "Base": {
+    "hasMapMarker": false
+  },
+  "canShowOnTitle": false,
+  "Orbit": {
+    "primaryBody": "Gravelrock",
+    "semiMajorAxis": 200,
+    "isTidallyLocked": true,
+    "dottedOrbitLine": true,
+    "orbitLineFadeEndDistance": 1000
+  },
+  "Props": {
+    "details": [
+      {
+        "path": "HearthianMapSatellite_Body/Sector_HearthianMapSatellite/Geometry_HearthianMapSatellite",
+        "keepLoaded": true
+      },
+      {
+        "path": "HearthianMapSatellite_Body/Lights",
+        "keepLoaded": true
+      }
+    ],
+    "signals": [
+      {
+        "audio": "ToolProbeFlight_LP",
+        "detectionRadius": 100,
+        "identificationRadius": 30,
+        "frequency": "Comms Network",
+        "onlyAudibleToScope": true,
+        "name": "Communication Satellite"
+      }
+    ]
+  }
+}

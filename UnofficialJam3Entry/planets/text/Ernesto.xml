@@ -1,0 +1,53 @@
+﻿<DialogueTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/dialogue_schema.xsd">
+  <NameField>Ernesto</NameField>
+
+  <DialogueNode>
+    <Name>START</Name>
+    <EntryCondition>DEFAULT</EntryCondition>
+    <Dialogue>
+      <Page>Hey it's me actual-real-canonical Ernesto, the magic talking anglerfish.</Page>
+    </Dialogue>
+
+    <DialogueTarget>Menu</DialogueTarget>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>Menu</Name>
+    <Dialogue>
+      <Page>You wanted to ask me something?</Page>
+    </Dialogue>
+
+    <DialogueOptionsList>
+      <DialogueOption>
+        <Text>Did you crash your ship or?</Text>
+        <DialogueTarget>Crash</DialogueTarget>
+      </DialogueOption>
+      <DialogueOption>
+        <Text>Are you the one and only canonical Ernesto?</Text>
+        <DialogueTarget>ErnestoOrigins</DialogueTarget>
+      </DialogueOption>
+      <DialogueOption>
+        <Text>Goodbye.</Text>
+      </DialogueOption>
+    </DialogueOptionsList>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>Crash</Name>
+    <Dialogue>
+      <Page>I don't have a ship, but yes I magically materialized myself inside of a volcano instead of at Granite's birthday party</Page>
+    </Dialogue>
+    <DialogueTarget>Menu</DialogueTarget>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>ErnestoOrigins</Name>
+    <Dialogue>
+      <Page>I would say yes but then that would be against the spirit of community something or other.</Page>
+      <Page>That said, the only canon Ernesto is the one in the Uncertain Futures mod.</Page>
+      <Page>If you're from the future and that mod is actually out, yell at Clay if I'm not really in it!</Page>
+    </Dialogue>
+    <DialogueTarget>Menu</DialogueTarget>
+  </DialogueNode>
+
+</DialogueTree>
