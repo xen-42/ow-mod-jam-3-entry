@@ -5,22 +5,26 @@
     <Name>START</Name>
     <EntryCondition>DEFAULT</EntryCondition>
     <Dialogue>
-      <Page>Oh hey, how's it going?</Page>
+      <Page>Hello.</Page>
     </Dialogue>
 
-    <DialogueTarget>QuartzMenu</DialogueTarget>
+    <DialogueTarget>Menu</DialogueTarget>
   </DialogueNode>
 
   <DialogueNode>
-    <Name>QuartzMenu</Name>
+    <Name>Menu</Name>
     <Dialogue>
-      <Page>You wanted to ask me something?</Page>
+      <Page>Yes?</Page>
     </Dialogue>
 
     <DialogueOptionsList>
       <DialogueOption>
         <Text>Did you crash your ship or?</Text>
         <DialogueTarget>Crash</DialogueTarget>
+      </DialogueOption>
+      <DialogueOption>
+        <Text>Where are you from?</Text>
+        <DialogueTarget>From</DialogueTarget>
       </DialogueOption>
       <DialogueOption>
         <Text>Goodbye.</Text>
@@ -31,11 +35,17 @@
   <DialogueNode>
     <Name>Crash</Name>
     <Dialogue>
-      <Page>Yeah, I was on my way to Granite's birthday party and wasn't paying attention to my flying!</Page>
-      <Page>Crashed into a big volcanic crater.</Page>
-      <Page>Bit of a bummer!</Page>
+      <Page>No.</Page>
     </Dialogue>
-    <DialogueTarget>QuartzMenu</DialogueTarget>
+    <DialogueTarget>Menu</DialogueTarget>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>From</Name>
+    <Dialogue>
+      <Page>That's a personal question.</Page>
+    </Dialogue>
+    <DialogueTarget>Menu</DialogueTarget>
   </DialogueNode>
 
 </DialogueTree>

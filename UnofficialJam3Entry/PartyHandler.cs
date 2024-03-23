@@ -36,6 +36,9 @@ internal class PartyHandler : MonoBehaviour
                     var hearthian = parent.GetComponent<CharacterAnimController>();
                     var other = parent.GetComponent<FacePlayerWhenTalking>();
 
+                    // Don't invite Granite to their own party
+                    if (dialogue.transform.GetPath() == "Gravelrock_Body/Sector/Granite/GraniteAnim/GraniteConversation") continue;
+
                     if (nomai != null || traveler != null || hearthian != null || other != null)
                     {
                         Invite(parent.gameObject, dialogue);
@@ -150,11 +153,20 @@ internal class PartyHandler : MonoBehaviour
             if (options != null)
             {
                 var newOption = existingDialogueDoc.CreateElement("DialogueOption");
-                newOption.InnerText = $"<RequiredPersistentCondition>KnowsItsGranitesBirthday</RequiredPersistentCondition>" + 
+                newOption.InnerText = $"<RequiredCondition>KnowsItsGranitesBirthday</RequiredCondition>" + 
                     $"<CancelledCondition>{uniqueCondition}</CancelledCondition>" +
                     "<Text>Want to go to Granite's birthday party?</Text>" + 
                     "<DialogueTarget>GranitePartyInvite</DialogueTarget>";
-                options.AppendChild(newOption);
+                var firstNode = options.GetChildNode("DialogueOption");
+                if (firstNode == null)
+                {
+                    // Makes no sense?
+                    options.AppendChild(newOption);
+                }
+                else
+                {
+                    options.InsertBefore(newOption, firstNode);
+                }
 
                 wasInvited = true;
             }
@@ -194,6 +206,7 @@ internal class PartyHandler : MonoBehaviour
         var signal = UnofficialJam3Entry.NHAPI.SpawnSignal(UnofficialJam3Entry.Instance, root, "ToolProbeFlight_LP", uniqueName, "Comms Network", detectionRadius: 0);
         signal.transform.parent = root.transform;
         signal.transform.localPosition = Vector3.zero;
+        signal.gameObject.AddComponent<PartyInvitationSignal>();
 
         _uniqueIDs.Add(uniqueName);
         _invitationIDs[uniqueCondition] = dialogue.transform.parent.gameObject;

@@ -8,11 +8,11 @@
       <Page>Oh hey, how's it going?</Page>
     </Dialogue>
 
-    <DialogueTarget>QuartzMenu</DialogueTarget>
+    <DialogueTarget>Menu</DialogueTarget>
   </DialogueNode>
 
   <DialogueNode>
-    <Name>QuartzMenu</Name>
+    <Name>Menu</Name>
     <Dialogue>
       <Page>You wanted to ask me something?</Page>
     </Dialogue>
@@ -23,6 +23,15 @@
         <DialogueTarget>Crash</DialogueTarget>
       </DialogueOption>
       <DialogueOption>
+        <Text>Can I borrow your ship?</Text>
+        <DialogueTarget>Borrow</DialogueTarget>
+      </DialogueOption>
+      <DialogueOption>
+        <Text>Your name is weird.</Text>
+        <DialogueTarget>WeirdName</DialogueTarget>
+        <CancelledCondition>ApologizedToCauliflower</CancelledCondition>
+      </DialogueOption>
+      <DialogueOption>
         <Text>Goodbye.</Text>
       </DialogueOption>
     </DialogueOptionsList>
@@ -31,11 +40,52 @@
   <DialogueNode>
     <Name>Crash</Name>
     <Dialogue>
-      <Page>Yeah, I was on my way to Granite's birthday party and wasn't paying attention to my flying!</Page>
-      <Page>Crashed into a big volcanic crater.</Page>
-      <Page>Bit of a bummer!</Page>
+      <Page>Crash? No, not at all. A perfect landing!</Page>
+      <Page>Just a perfect landing into a volcanic crater.</Page>
     </Dialogue>
-    <DialogueTarget>QuartzMenu</DialogueTarget>
+    <DialogueTarget>Menu</DialogueTarget>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>Borrow</Name>
+    <Dialogue>
+      <Page>By all means!</Page>
+      <Page>There may or may not be other planets to fly it to. I don't know, I didn't look!</Page>
+    </Dialogue>
+    <DialogueTarget>Menu</DialogueTarget>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>Borrow</Name>
+    <Dialogue>
+      <Page>I beg your pardon?</Page>
+      <Page>That's quite rude don't you think?</Page>
+    </Dialogue>
+    <DialogueTarget>RequestApology</DialogueTarget>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>RequestApology</Name>
+    <Dialogue>
+      <Page>I demand an apology!</Page>
+    </Dialogue>
+    <DialogueOption>
+      <Text>I'm sorry.</Text>
+      <DialogueTarget>ApologyAccepted</DialogueTarget>
+      <SetCondition>ApologizedToCauliflower</SetCondition>
+    </DialogueOption>
+    <DialogueOption>
+      <Text>Never!</Text>
+      <DialogueTarget>RequestApology</DialogueTarget>
+    </DialogueOption>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>ApologyAccepted</Name>
+    <Dialogue>
+      <Page>Thank you.</Page>
+    </Dialogue>
+    <DialogueTarget>Menu</DialogueTarget>
   </DialogueNode>
 
 </DialogueTree>

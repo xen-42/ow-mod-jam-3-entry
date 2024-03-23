@@ -31,10 +31,20 @@
       <DialogueOption>
         <Text>What are you doing here?</Text>
         <DialogueTarget>Explain</DialogueTarget>
+        <CancelledCondition>KnowsItsGranitesBirthday</CancelledCondition>
+      </DialogueOption>
+      <DialogueOption>
+        <Text>What is this planet?</Text>
+        <DialogueTarget>Planet</DialogueTarget>
+      </DialogueOption>
+      <DialogueOption>
+        <Text>Do you know Riebeck?</Text>
+        <DialogueTarget>Riebeck</DialogueTarget>
+        <CancelledCondition>ActuallyKnowsRiebeck</CancelledCondition>
       </DialogueOption>
       <DialogueOption>
         <Text>Happy birthday!</Text>
-        <RequiredPersistentCondition>KnowsItsGranitesBirthday</RequiredPersistentCondition>
+        <RequiredCondition>KnowsItsGranitesBirthday</RequiredCondition>
         <DialogueTarget>HappyBirthday</DialogueTarget>
       </DialogueOption>
       <DialogueOption>
@@ -60,10 +70,76 @@
     <Name>Explain</Name>
     <Dialogue>
       <Page>Oh, well, you see, it's my birthday today. I'm waiting for my friends to arrive, but they aren't here yet.</Page>
-      <Page>I was using my radio to communicate with them, but it's broken. I get messages through the <![CDATA[<color="orange">]]>communication's satellite<![CDATA[</color>]]> in orbit you see.</Page>
+      <Page>I was using my radio to communicate with them, but its reception is broken. I normally get messages through the <![CDATA[<color="orange">]]>communication's satellite<![CDATA[</color>]]> in orbit you see.</Page>
       <Page>Maybe you'd be able to track down where everyone is for me? I'd really appreciate it!</Page>
+      <Page>Here, I'll try and transmit to them. I can't hear any responses, but maybe you'll be able to.</Page>
     </Dialogue>
-    <SetPersistentCondition>KnowsItsGranitesBirthday</SetPersistentCondition>
+    <SetCondition>KnowsItsGranitesBirthday</SetCondition>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>Planet</Name>
+    <Dialogue>
+      <Page>This is Gravelrock! It's like a rock, but with gravel, or something.</Page>
+      <Page>I don't know, I didn't name it. Built a cabin here tho!</Page>
+      <Page>I think the planet used to be pretty geologically active. There are a lot of dormant volcanos and geysers around. But nothing much moves around here except the dust.</Page>
+    </Dialogue>
+    <DialogueOptionsList>
+      <DialogueOption>
+        <Text>I see.</Text>
+        <DialogueTarget>GraniteMenu</DialogueTarget>
+      </DialogueOption>
+    </DialogueOptionsList>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>Riebeck</Name>
+    <Dialogue>
+      <Page>Riebeck? No can't say I do.</Page>
+      <Page>Why do you ask?</Page>
+    </Dialogue>
+    <DialogueOptionsList>
+      <DialogueOption>
+        <Text>You look just like them!</Text>
+        <DialogueTarget>Lookalike</DialogueTarget>
+      </DialogueOption>
+      <DialogueOption>
+        <Text>Nevermind, forget I said anything.</Text>
+        <DialogueTarget>GraniteMenu</DialogueTarget>
+      </DialogueOption>
+    </DialogueOptionsList>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>Lookalike</Name>
+    <Dialogue>
+      <Page>I look like them? Buddy I'm wearing a space suit, how would you know what I look like!</Page>
+      <Page>I bought this at a space-explorers surplus store. Could be millions of people wearing this same suit!</Page>
+    </Dialogue>
+    <DialogueOptionsList>
+      <DialogueOption>
+        <Text>Fair point.</Text>
+        <DialogueTarget>GraniteMenu</DialogueTarget>
+      </DialogueOption>
+      <DialogueOption>
+        <Text>But you're a Hearthian right? I mean we have like 5 astronauts. You seriously don't know Riebeck?</Text>
+        <DialogueTarget>ItKeepsGoing</DialogueTarget>
+      </DialogueOption>
+    </DialogueOptionsList>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>ItKeepsGoing</Name>
+    <Dialogue>
+      <Page>Oh wait, you said Riebeck? I thought you said John. Oh yeah I know Riebeck. They're my fourth cousin thrice removed.</Page>
+    </Dialogue>
+    <DialogueOptionsList>
+      <DialogueOption>
+        <Text>I knew it! Well not the specific numbers there but, you get my point.</Text>
+        <DialogueTarget>GraniteMenu</DialogueTarget>
+        <SetCondition>ActuallyKnowsRiebeck</SetCondition>
+      </DialogueOption>
+    </DialogueOptionsList>
   </DialogueNode>
 
   <DialogueNode>
@@ -78,6 +154,7 @@
     <Dialogue>
       <Page>Why thank you!</Page>
     </Dialogue>
+    <DialogueTarget>GraniteMenu</DialogueTarget>
   </DialogueNode>
 
   <DialogueNode>
