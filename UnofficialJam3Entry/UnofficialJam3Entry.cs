@@ -6,22 +6,27 @@ namespace UnofficialJam3Entry
 {
     public class UnofficialJam3Entry : ModBehaviour
     {
-        private INewHorizons _newHorizons;
+        public static UnofficialJam3Entry Instance { get; private set; }
+        public static IModHelper Helper { get; private set; }
+        public static INewHorizons NHAPI { get; private set; }
 
         private void Start()
         {
             // Starting here, you'll have access to OWML's mod helper.
             ModHelper.Console.WriteLine($"My mod {nameof(UnofficialJam3Entry)} is loaded!", MessageType.Success);
 
-            _newHorizons = ModHelper.Interaction.TryGetModApi<INewHorizons>("xen.NewHorizons");
-            _newHorizons.LoadConfigs(this);
+            Instance = this;
+            Helper = this.ModHelper;
+
+            NHAPI = ModHelper.Interaction.TryGetModApi<INewHorizons>("xen.NewHorizons");
+            NHAPI.LoadConfigs(this);
 
             DialogueConditionHandler.Setup();
 
             LoadManager.OnCompleteSceneLoad += (scene, loadScene) =>
             {
                 if (loadScene != OWScene.SolarSystem) return;
-                if (_newHorizons.GetCurrentStarSystem() == "Jam3")
+                if (NHAPI.GetCurrentStarSystem() == "Jam3")
                 {
                     OnSystemLoaded();
                 }
@@ -30,7 +35,7 @@ namespace UnofficialJam3Entry
 
         private void OnSystemLoaded()
         {
-
+            new GameObject(nameof(PartyHandler)).AddComponent<PartyHandler>();
         }
     }
 }

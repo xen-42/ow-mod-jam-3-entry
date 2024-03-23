@@ -429,7 +429,8 @@
         },
         "pathToAnimController": "Sector/Quartz",
         "isRelativeToParent": true,
-        "xmlFile": "planets/text/Quartz.xml"
+        "xmlFile": "planets/text/Quartz.xml",
+        "pathToExistingDialogue": ""
       },
       {
         "position": {
@@ -479,7 +480,7 @@
         "audio": "OW_TravelerTheme_banjo",
         "track": "environment",
         "isRelativeToParent": true,
-        "parentPath": "Sector/Granite"
+        "parentPath": "Sector/Granite/GraniteAnim"
       }
     ]
   },

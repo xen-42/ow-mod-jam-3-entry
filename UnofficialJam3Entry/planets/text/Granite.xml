@@ -29,6 +29,27 @@
 
     <DialogueOptionsList>
       <DialogueOption>
+        <Text>What are you doing here?</Text>
+        <DialogueTarget>Explain</DialogueTarget>
+      </DialogueOption>
+      <DialogueOption>
+        <Text>Happy birthday!</Text>
+        <RequiredPersistentCondition>KnowsItsGranitesBirthday</RequiredPersistentCondition>
+        <DialogueTarget>HappyBirthday</DialogueTarget>
+      </DialogueOption>
+      <DialogueOption>
+        <RequiredCondition>HasSomePartyGoers</RequiredCondition>
+        <CancelledCondition>HasManyPartyGoers</CancelledCondition>
+        <Text>Your friends are all here, shall we start the party?</Text>
+        <DialogueTarget>StartNormalParty</DialogueTarget>
+      </DialogueOption>
+      <DialogueOption>
+        <CancelledCondition>HasSomePartyGoers</CancelledCondition>
+        <RequiredCondition>HasManyPartyGoers</RequiredCondition>
+        <Text>I found your friends, plus some more! Shall we start the party?</Text>
+        <DialogueTarget>StartBigParty</DialogueTarget>
+      </DialogueOption>
+      <DialogueOption>
         <Text>Talk to you later.</Text>
         <DialogueTarget>Goodbye</DialogueTarget>
       </DialogueOption>
@@ -36,10 +57,44 @@
   </DialogueNode>
 
   <DialogueNode>
+    <Name>Explain</Name>
+    <Dialogue>
+      <Page>Oh, well, you see, it's my birthday today. I'm waiting for my friends to arrive, but they aren't here yet.</Page>
+      <Page>I was using my radio to communicate with them, but it's broken. I get messages through the <![CDATA[<color="orange">]]>communication's satellite<![CDATA[</color>]]> in orbit you see.</Page>
+      <Page>Maybe you'd be able to track down where everyone is for me? I'd really appreciate it!</Page>
+    </Dialogue>
+    <SetPersistentCondition>KnowsItsGranitesBirthday</SetPersistentCondition>
+  </DialogueNode>
+
+  <DialogueNode>
     <Name>Goodbye</Name>
     <Dialogue>
       <Page>See you around!</Page>
     </Dialogue>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>HappyBirthday</Name>
+    <Dialogue>
+      <Page>Why thank you!</Page>
+    </Dialogue>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>StartNormalParty</Name>
+    <Dialogue>
+      <Page>Thanks for gathering up everyone! Let's get this party started!</Page>
+    </Dialogue>
+    <SetCondition>TriggerGraniteParty</SetCondition>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>StartBigParty</Name>
+    <Dialogue>
+      <Page>Wow so many people! I've never had so many people show up to my birthday party!</Page>
+      <Page>Let's get this party started!</Page>
+    </Dialogue>
+    <SetCondition>TriggerGraniteBigParty</SetCondition>
   </DialogueNode>
 
 </DialogueTree>
