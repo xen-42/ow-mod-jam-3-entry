@@ -482,5 +482,12 @@
         "isRelativeToParent": true
       }
     ]
+  },
+  "ShipLog": {
+    "mapMode": {
+      "outlineSprite": "planets/shiplog/sprites/gravelrock_outline.png",
+      "revealedSprite": "planets/shiplog/sprites/gravelrock.png"
+    },
+    "xmlFile": "planets/shiplog/Gravelrock.xml"
   }
 }

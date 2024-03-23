@@ -33,5 +33,10 @@
         "name": "Communication Satellite"
       }
     ]
+  },
+  "ShipLog": {
+    "mapMode": {
+      "remove": true
+    }
   }
 }

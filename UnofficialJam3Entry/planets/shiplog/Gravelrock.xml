@@ -1,0 +1,21 @@
+﻿<AstroObjectEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/shiplog_schema.xsd">
+  <ID>GRAVELROCK</ID>
+
+  <Entry>
+    <ID>GRANITE_ROOT</ID>
+    <Name>The Dusty Cabin</Name>
+    <Curiosity>GRANITE_CURIOSITY</Curiosity>
+    <IsCuriosity/>
+    <IgnoreMoreToExplore/>
+    <AltPhotoCondition>GRANITE_CABIN_EXPLORE_FACT</AltPhotoCondition>
+
+    <RumorFact>
+      <ID>GRANITE_RUMOR_FACT</ID>
+      <RumorName>Granite's Birthday Party</RumorName>
+      <Text>It's Granite's birthday! They want me to invite their friends.</Text>
+    </RumorFact>
+
+  </Entry>
+
+</AstroObjectEntry>
