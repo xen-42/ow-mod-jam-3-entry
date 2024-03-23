@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Epic.OnlineServices.Platform;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 namespace UnofficialJam3Entry;
 
-internal class PartyHandler : MonoBehaviour
+internal class PartyInvitationHandler : MonoBehaviour
 {
     // For blinking while they go to the party
     private PlayerCameraEffectController _playerCameraEffectController;
@@ -18,8 +19,12 @@ internal class PartyHandler : MonoBehaviour
     private int _inviteCount = 0;
     private int _gravelrockInviteCount = 0;
 
+    private PartyPlacementHandler _placementHandler;
+
     public void Start()
     {
+        _placementHandler = this.GetComponent<PartyPlacementHandler>();
+
         // CharacterDialogueTrees are late initialized
         UnofficialJam3Entry.Helper.Events.Unity.FireInNUpdates(() =>
         {
@@ -30,16 +35,17 @@ internal class PartyHandler : MonoBehaviour
                 {
                     dialogue.VerifyInitialized();
 
-                    var parent = dialogue.transform.parent;
-                    var nomai = parent.GetComponent<SolanumAnimController>();
-                    var traveler = parent.GetComponent<TravelerController>();
-                    var hearthian = parent.GetComponent<CharacterAnimController>();
-                    var other = parent.GetComponent<FacePlayerWhenTalking>();
+                    var nomai = dialogue.GetComponentInParent<SolanumAnimController>()?.transform;
+                    var traveler = dialogue.GetComponentInParent<TravelerController>()?.transform;
+                    var hearthian = dialogue.GetComponentInParent<CharacterAnimController>()?.transform;
+                    var other = dialogue.GetComponentInParent<FacePlayerWhenTalking>()?.transform;
+
+                    var parent = nomai ?? traveler ?? hearthian ?? other;
 
                     // Don't invite Granite to their own party
                     if (dialogue.transform.GetPath().Contains("Gravelrock_Body/Sector/Granite")) continue;
 
-                    if (nomai != null || traveler != null || hearthian != null || other != null)
+                    if (parent)
                     {
                         Invite(parent.gameObject, dialogue);
 
@@ -112,7 +118,7 @@ internal class PartyHandler : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
 
         // Eyes closed: swap character state
-        characterObj.SetActive(false);
+        _placementHandler.PlacePartygoer(characterObj);
 
         yield return new WaitForSeconds(0.3f);
 
@@ -152,21 +158,7 @@ internal class PartyHandler : MonoBehaviour
             var options = existingDialogueNode.GetChildNode("DialogueOptionsList");
             if (options != null)
             {
-                var newOption = existingDialogueDoc.CreateElement("DialogueOption");
-                newOption.InnerText = $"<RequiredCondition>KnowsItsGranitesBirthday</RequiredCondition>" + 
-                    $"<CancelledCondition>{uniqueCondition}</CancelledCondition>" +
-                    "<Text>Want to go to Granite's birthday party?</Text>" + 
-                    "<DialogueTarget>GranitePartyInvite</DialogueTarget>";
-                var firstNode = options.GetChildNode("DialogueOption");
-                if (firstNode == null)
-                {
-                    // Makes no sense?
-                    options.AppendChild(newOption);
-                }
-                else
-                {
-                    options.InsertBefore(newOption, firstNode);
-                }
+                AddToDialogueOptionsList(options, uniqueCondition);
 
                 wasInvited = true;
             }
@@ -175,7 +167,19 @@ internal class PartyHandler : MonoBehaviour
         if (!wasInvited)
         {
             // Was not able to insert an invitation option
-            throw new Exception("This dialogue has no DialogueOptionsList");
+            // Add to all nodes
+            foreach (XmlNode existingDialogueNode in existingDialogueTree.GetChildNodes("DialogueNode"))
+            {
+                var options = existingDialogueDoc.CreateElement("DialogueOptionsList");
+                existingDialogueNode.AppendChild(options);
+                AddToDialogueOptionsList(options, uniqueCondition);
+                wasInvited = true;
+            }
+        }
+
+        if (!wasInvited)
+        {
+            throw new Exception("Couldn't add invitation to dialogue at all");
         }
 
         // Add the dialogue node where they accept
@@ -209,6 +213,24 @@ internal class PartyHandler : MonoBehaviour
         signal.gameObject.AddComponent<PartyInvitationSignal>();
 
         _uniqueIDs.Add(uniqueName);
-        _invitationIDs[uniqueCondition] = dialogue.transform.parent.gameObject;
+        _invitationIDs[uniqueCondition] = root;
+    }
+
+    private void AddToDialogueOptionsList(XmlNode options, string uniqueCondition)
+    {
+        var newOption = options.OwnerDocument.CreateElement("DialogueOption");
+        newOption.InnerText = $"<RequiredCondition>KnowsItsGranitesBirthday</RequiredCondition>" +
+            $"<CancelledCondition>{uniqueCondition}</CancelledCondition>" +
+            "<Text>Want to go to Granite's birthday party?</Text>" +
+            "<DialogueTarget>GranitePartyInvite</DialogueTarget>";
+        var firstNode = options.GetChildNode("DialogueOption");
+        if (firstNode == null)
+        {
+            options.AppendChild(newOption);
+        }
+        else
+        {
+            options.InsertBefore(newOption, firstNode);
+        }
     }
 }

@@ -154,7 +154,8 @@
           "x": 290.1041,
           "y": 120.2157,
           "z": 156.6677
-        }
+        },
+        "rename": "Campfire"
       },
       {
         "path": "",
@@ -227,7 +228,7 @@
       {
         "rename": "ErnestoCollision",
         "path": "Anglerfish_Body/Beast_Anglerfish_Collision",
-        "scale": 0.02,
+        "scale": 0.025,
         "parentPath": "Sector/Ernesto",
         "isRelativeToParent": true
       },
@@ -404,7 +405,7 @@
           "y": 1.6,
           "z": 0
         },
-        "pathToAnimController": "Sector/Granite/GraniteAnim",
+        "parentPath": "Sector/Granite/GraniteAnim",
         "isRelativeToParent": true,
         "xmlFile": "planets/text/Granite.xml"
       },
@@ -437,7 +438,9 @@
         },
         "pathToAnimController": "Sector/The_Visitor",
         "isRelativeToParent": true,
-        "xmlFile": "planets/text/TheVisitor.xml"
+        "xmlFile": "planets/text/TheVisitor.xml",
+        "radius": 2,
+        "range": 7
       },
       {
         "position": {
@@ -449,7 +452,7 @@
         "isRelativeToParent": true,
         "xmlFile": "planets/text/Ernesto.xml",
         "radius": 2,
-        "range": 4
+        "range": 7
       },
       {
         "position": {

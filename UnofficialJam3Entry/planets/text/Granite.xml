@@ -48,6 +48,11 @@
         <DialogueTarget>HappyBirthday</DialogueTarget>
       </DialogueOption>
       <DialogueOption>
+        <Text>I invited somebody here but they disappeared, what happened?</Text>
+        <RequiredCondition>FailedToPlacePartygoer</RequiredCondition>
+        <DialogueTarget>FailedToPlacePartygoer</DialogueTarget>
+      </DialogueOption>
+      <DialogueOption>
         <RequiredCondition>HasSomePartyGoers</RequiredCondition>
         <CancelledCondition>HasManyPartyGoers</CancelledCondition>
         <Text>Your friends are all here, shall we start the party?</Text>
@@ -144,6 +149,14 @@
         <SetCondition>ActuallyKnowsRiebeck</SetCondition>
       </DialogueOption>
     </DialogueOptionsList>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>FailedToPlacePartygoer</Name>
+    <Dialogue>
+      <Page>Oh yeah that happens sometimes. Maybe they got lost, maybe they crashed and died horribly, maybe the party is too crowded for them.</Page>
+    </Dialogue>
+    <DialogueTarget>GraniteMenu</DialogueTarget>
   </DialogueNode>
 
   <DialogueNode>

@@ -36,7 +36,8 @@ namespace UnofficialJam3Entry
 
         private void OnSystemLoaded()
         {
-            new GameObject(nameof(PartyHandler)).AddComponent<PartyHandler>();
+            new GameObject(nameof(PartyInvitationHandler)).AddComponent<PartyInvitationHandler>()
+                .gameObject.AddComponent<PartyPlacementHandler>();
         }
 
         public static void WriteDebug(string msg)
