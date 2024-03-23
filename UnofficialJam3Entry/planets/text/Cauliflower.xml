@@ -58,7 +58,7 @@
   </DialogueNode>
 
   <DialogueNode>
-    <Name>Borrow</Name>
+    <Name>WeirdName</Name>
     <Dialogue>
       <Page>I beg your pardon?</Page>
       <Page>That's quite rude don't you think?</Page>
@@ -71,15 +71,17 @@
     <Dialogue>
       <Page>I demand an apology!</Page>
     </Dialogue>
-    <DialogueOption>
-      <Text>I'm sorry.</Text>
-      <DialogueTarget>ApologyAccepted</DialogueTarget>
-      <SetCondition>ApologizedToCauliflower</SetCondition>
-    </DialogueOption>
-    <DialogueOption>
-      <Text>Never!</Text>
-      <DialogueTarget>RequestApology</DialogueTarget>
-    </DialogueOption>
+    <DialogueOptionsList>
+      <DialogueOption>
+        <Text>I'm sorry.</Text>
+        <DialogueTarget>ApologyAccepted</DialogueTarget>
+        <SetCondition>ApologizedToCauliflower</SetCondition>
+      </DialogueOption>
+      <DialogueOption>
+        <Text>Never!</Text>
+        <DialogueTarget>RequestApology</DialogueTarget>
+      </DialogueOption>
+    </DialogueOptionsList>
   </DialogueNode>
 
   <DialogueNode>

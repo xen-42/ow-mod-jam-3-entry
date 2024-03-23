@@ -167,6 +167,9 @@
       <Page>Thanks for gathering up everyone! Let's get this party started!</Page>
     </Dialogue>
     <SetCondition>TriggerGraniteParty</SetCondition>
+    <RevealFacts>
+      <FactID>GRANITE_PARTY_THROWN_EXPLORE_FACT</FactID>
+    </RevealFacts>
   </DialogueNode>
 
   <DialogueNode>
@@ -176,6 +179,9 @@
       <Page>Let's get this party started!</Page>
     </Dialogue>
     <SetCondition>TriggerGraniteBigParty</SetCondition>
+    <RevealFacts>
+      <FactID>GRANITE_BIG_PARTY_THROWN_EXPLORE_FACT</FactID>
+    </RevealFacts>
   </DialogueNode>
 
 </DialogueTree>

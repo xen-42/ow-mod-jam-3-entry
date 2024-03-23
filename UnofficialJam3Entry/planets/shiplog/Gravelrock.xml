@@ -15,6 +15,16 @@
       <RumorName>Granite's Birthday Party</RumorName>
       <Text>It's Granite's birthday! They want me to invite their friends.</Text>
     </RumorFact>
+
+    <ExploreFact>
+      <ID>GRANITE_PARTY_THROWN_EXPLORE_FACT</ID>
+      <Text>I gathered all of Granite's friends and we had a great party!</Text>
+    </ExploreFact>
+
+    <ExploreFact>
+      <ID>GRANITE_BIG_PARTY_THROWN_EXPLORE_FACT</ID>
+      <Text>I invited people from across the solar system to join Granite's party!</Text>
+    </ExploreFact>
   </Entry>
 
   <!-- This entry is for the friends on the planet -->
@@ -84,6 +94,7 @@
     <RumorFact>
       <ID>ERNESTOS_BIG_SECRET_RUMOR</ID>
       <RumorName>Ernesto's big secret</RumorName>
+      <SourceID>ERNESTO</SourceID>
       <Text>I asked Ernesto about their biggest secret of all time. For some reason. He said it's on the planet!</Text>
     </RumorFact>
 

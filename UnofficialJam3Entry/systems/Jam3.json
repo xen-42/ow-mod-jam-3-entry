@@ -1,0 +1,71 @@
+{
+  "$schema": "https://raw.githubusercontent.com/xen-42/outer-wilds-new-horizons/main/NewHorizons/Schemas/star_system_schema.json",
+  "entryPositions": [
+    {
+      "id": "GRANITE_ROOT",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "GRAVELROCK_FRIENDS_ROOT",
+      "position": {
+        "x": 250,
+        "y": 100
+      }
+    },
+    {
+      "id": "ERNESTO",
+      "position": {
+        "x": 180,
+        "y": -100
+      }
+    },
+    {
+      "id": "CAULIFLOWER",
+      "position": {
+        "x": 200,
+        "y": 0
+      }
+    },
+    {
+      "id": "QUARTZ",
+      "position": {
+        "x": 350,
+        "y": 0
+      }
+    },
+    {
+      "id": "THE_VISITOR",
+      "position": {
+        "x": 275,
+        "y": 0
+      }
+    },
+    {
+      "id": "ERNESTOS_BIG_SECRET",
+      "position": {
+        "x": 320,
+        "y": -150
+      }
+    }
+  ],
+  "curiosities": [
+    {
+      "id": "GRANITE_CURIOSITY",
+      "color": {
+        "r": 100,
+        "g": 100,
+        "b": 100,
+        "a": 255
+      },
+      "highlightColor": {
+        "r": 160,
+        "g": 160,
+        "b": 160,
+        "a": 255
+      }
+    }
+  ]
+}
