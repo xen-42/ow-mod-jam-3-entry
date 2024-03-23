@@ -12,7 +12,8 @@
   "Orbit": {
     "primaryBody": "Jam 3 Sun",
     "semiMajorAxis": 1000,
-    "siderealPeriod": 3
+    "siderealPeriod": 2,
+    "trueAnomaly": 10
   },
   "Atmosphere": {
     "hasTrees": true,
@@ -188,7 +189,8 @@
         "isRelativeToParent": true,
         "rename": "BigPartyConditionalVolume",
         "activationCondition": "TriggerGraniteBigParty",
-        "keepLoaded": true
+        "keepLoaded": true,
+        "blinkWhenActiveChanged": false
       },
       {
         "path": "",
@@ -196,7 +198,8 @@
         "isRelativeToParent": true,
         "rename": "PartyConditionalVolume",
         "activationCondition": "TriggerGraniteParty",
-        "keepLoaded": true
+        "keepLoaded": true,
+        "blinkWhenActiveChanged": false
       },
       // Hal and ship
       {

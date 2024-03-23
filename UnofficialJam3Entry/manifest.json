@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/ow-mods/owml/master/schemas/manifest_schema.json",
   "filename": "UnofficialJam3Entry.dll",
   "author": "xen",
-  "name": "Unofficial Jam 3 Entry",
+  "name": "Granite's Invitation",
   "uniqueName": "xen.UnofficialJam3Entry",
   "version": "0.1.0",
   "owmlVersion": "2.9.0",

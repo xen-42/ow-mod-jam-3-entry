@@ -51,7 +51,7 @@
       <Curiosity>GRANITE_CURIOSITY</Curiosity>
       <ExploreFact>
         <ID>GRANITE_ERNESTO_FACT</ID>
-        <Text>I met Ernesto, the magic talking anglerfish.</Text>
+        <Text>I met Ernesto, the magic talking anglerfish. He was in a volcano.</Text>
       </ExploreFact>
     </Entry>
 
@@ -61,7 +61,7 @@
       <Curiosity>GRANITE_CURIOSITY</Curiosity>
       <ExploreFact>
         <ID>GRANITE_VISITOR_FACT</ID>
-        <Text>I met one of the inhabitants of the Stranger, near the north pole.</Text>
+        <Text>I met one of the inhabitants of the Stranger, inside the north pole volcano.</Text>
       </ExploreFact>
     </Entry>
 
@@ -81,7 +81,7 @@
       <Curiosity>GRANITE_CURIOSITY</Curiosity>
       <ExploreFact>
         <ID>GRANITE_HEARTHIAN_FACT</ID>
-        <Text>I met a Hearthian named Quartz.</Text>
+        <Text>I met a Hearthian named Quartz beside their ship in a dormant volcano.</Text>
       </ExploreFact>
     </Entry>
   </Entry>
@@ -95,7 +95,7 @@
       <ID>ERNESTOS_BIG_SECRET_RUMOR</ID>
       <RumorName>Ernesto's big secret</RumorName>
       <SourceID>ERNESTO</SourceID>
-      <Text>I asked Ernesto about their biggest secret of all time. For some reason. He said it's on the planet!</Text>
+      <Text>I asked Ernesto about his biggest secret of all time, for some reason. He said it's on the planet!</Text>
     </RumorFact>
 
     <ExploreFact>
@@ -104,7 +104,7 @@
     </ExploreFact>
     <ExploreFact>
       <ID>ERNESTOS_SECRET_RECORDING_EXPLORE_FACT_2</ID>
-      <Text>Okay it did explode, that hurt! I should ask Ernesto about what his deal is.</Text>
+      <Text>Okay it did explode, that hurt! I should ask Ernesto what his deal is.</Text>
     </ExploreFact>
     <ExploreFact>
       <ID>ERNESTOS_SECRET_RECORDING_EXPLORE_FACT_3</ID>

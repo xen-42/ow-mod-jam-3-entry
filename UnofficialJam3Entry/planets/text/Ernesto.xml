@@ -46,7 +46,7 @@
   <DialogueNode>
     <Name>Crash</Name>
     <Dialogue>
-      <Page>I don't have a ship, but yes I magically materialized myself inside of a volcano instead of at Granite's birthday party</Page>
+      <Page>I don't have a ship, but yes I magically materialized myself inside of a volcano instead of at Granite's birthday party.</Page>
     </Dialogue>
     <DialogueTarget>Menu</DialogueTarget>
   </DialogueNode>
