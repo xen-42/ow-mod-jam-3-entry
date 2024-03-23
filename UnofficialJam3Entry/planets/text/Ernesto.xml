@@ -27,6 +27,15 @@
         <DialogueTarget>ErnestoOrigins</DialogueTarget>
       </DialogueOption>
       <DialogueOption>
+        <Text>Can you tell me the ultimate Ernesto secret?</Text>
+        <DialogueTarget>ErnestoSecret</DialogueTarget>
+      </DialogueOption>
+      <DialogueOption>
+        <RequiredPersistentCondition>FoundSecretRecording</RequiredPersistentCondition>
+        <Text>I found your secret recording and it exploded.</Text>
+        <DialogueTarget>FoundErnestoSecret</DialogueTarget>
+      </DialogueOption>
+      <DialogueOption>
         <Text>Goodbye.</Text>
       </DialogueOption>
     </DialogueOptionsList>
@@ -48,6 +57,27 @@
       <Page>If you're from the future and that mod is actually out, yell at Clay if I'm not really in it!</Page>
     </Dialogue>
     <DialogueTarget>Menu</DialogueTarget>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>ErnestoSecret</Name>
+    <Dialogue>
+      <Page>What the hell does that even mean.</Page>
+      <Page>That is literal nonsense. What you just said makes no sense at all. What are you on about, like actually.</Page>
+      <Page>But also yes, it's hidden here on this very planet, hiding in plain sight, or something!</Page>
+      <Page>Good luck!</Page>
+    </Dialogue>
+    <DialogueTarget>Menu</DialogueTarget>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>FoundErnestoSecret</Name>
+    <Dialogue>
+      <Page>Haha yeah it did, eh!</Page>
+      <Page>Anyway...</Page>
+      <Page>I'm going to kill you now!</Page>
+    </Dialogue>
+    <SetCondition>ErnestoKilledYou</SetCondition>
   </DialogueNode>
 
 </DialogueTree>

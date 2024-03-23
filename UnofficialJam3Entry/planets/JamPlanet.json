@@ -244,6 +244,14 @@
         "parentPath": "Sector/Ernesto",
         "isRelativeToParent": true
       },
+      {
+        "rename": "ConditionalVolume",
+        "path": "",
+        "parentPath": "Sector/Ernesto",
+        "isRelativeToParent": true,
+        "activationCondition": "ErnestoKilledYou",
+        "blinkWhenActiveChanged": false
+      },
       // Cauliflower
       {
         "rename": "Cauliflower",
@@ -472,6 +480,18 @@
         "track": "environment",
         "isRelativeToParent": true,
         "parentPath": "Sector/Granite"
+      }
+    ]
+  },
+  "Volumes": {
+    "creditsVolume": [
+      {
+        "creditsType": "kazoo",
+        "parentPath": "Sector/Ernesto/ConditionalVolume",
+        "radius": 20,
+        "gameOverText": "Ernesto beat you to death with a rock.",
+        "deathType": "crushedByElevator",
+        "isRelativeToParent": true
       }
     ]
   }
