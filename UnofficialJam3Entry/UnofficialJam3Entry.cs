@@ -1,5 +1,6 @@
 ﻿using OWML.Common;
 using OWML.ModHelper;
+using System;
 using UnityEngine;
 
 namespace UnofficialJam3Entry
@@ -36,6 +37,13 @@ namespace UnofficialJam3Entry
         private void OnSystemLoaded()
         {
             new GameObject(nameof(PartyHandler)).AddComponent<PartyHandler>();
+        }
+
+        public static void WriteDebug(string msg)
+        {
+#if DEBUG
+            Helper.Console.WriteLine($"DEBUG - {msg}");
+#endif
         }
     }
 }

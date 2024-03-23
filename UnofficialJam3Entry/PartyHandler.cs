@@ -43,16 +43,16 @@ internal class PartyHandler : MonoBehaviour
                     {
                         Invite(parent.gameObject, dialogue);
 
-                        UnofficialJam3Entry.Helper.Console.WriteLine($"Successfully invited {dialogue._characterName} to the party!");
+                        UnofficialJam3Entry.WriteDebug($"Successfully invited {dialogue._characterName} to the party!");
                     }
                     else
                     {
-                        UnofficialJam3Entry.Helper.Console.WriteLine($"Couldn't invite {dialogue?._characterName ?? "NO NAME"} at {dialogue.transform.GetPath()} to the party since they didn't have a good parent object.");
+                        UnofficialJam3Entry.WriteDebug($"Couldn't invite {dialogue?._characterName ?? "NO NAME"} at {dialogue.transform.GetPath()} to the party since they didn't have a good parent object.");
                     }
                 }
                 catch (Exception ex)
                 {
-                    UnofficialJam3Entry.Helper.Console.WriteLine($"Couldn't invite {dialogue?._characterName ?? "NO NAME"} at {dialogue.transform.GetPath()} to the party - {ex}");
+                    UnofficialJam3Entry.WriteDebug($"Couldn't invite {dialogue?._characterName ?? "NO NAME"} at {dialogue.transform.GetPath()} to the party - {ex}");
                 }
             }
         }, 3);
@@ -72,10 +72,10 @@ internal class PartyHandler : MonoBehaviour
 
     private void OnDialogueConditionChanged(string conditionName, bool conditionState)
     {
-        UnofficialJam3Entry.Helper.Console.WriteLine($"CONDITION {conditionName}");
+        UnofficialJam3Entry.WriteDebug($"CONDITION {conditionName}");
         if (conditionState && _invitationIDs.Keys.Contains(conditionName))
         {
-            UnofficialJam3Entry.Helper.Console.WriteLine($"Queuing up invitation for {conditionName}");
+            UnofficialJam3Entry.WriteDebug($"Queuing up invitation for {conditionName}");
             _queuedConditionID = conditionName;
         }
     }
@@ -84,7 +84,7 @@ internal class PartyHandler : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(_queuedConditionID) && _invitationIDs.TryGetValue(_queuedConditionID, out var characterObj))
         {
-            UnofficialJam3Entry.Helper.Console.WriteLine($"Moving {_queuedConditionID} to the party!");
+            UnofficialJam3Entry.WriteDebug($"Moving {_queuedConditionID} to the party!");
 
             if (characterObj.GetAttachedOWRigidbody().name == "Gravelrock_Body")
             {
@@ -190,8 +190,8 @@ internal class PartyHandler : MonoBehaviour
         // The symbols are all wrong
         var text = existingDialogueDoc.OuterXml.Replace("&lt;", "<").Replace("&gt;", ">");
 
-        UnofficialJam3Entry.Helper.Console.WriteLine(name);
-        UnofficialJam3Entry.Helper.Console.WriteLine(text);
+        //UnofficialJam3Entry.WriteDebug(name);
+        //UnofficialJam3Entry.WriteDebug(text);
 
         // Create a new dialogue node through NH so that it runs all the proper stuff on it, we just want the final dialogue asset
         var tempGameObject = new GameObject("TEMP");
