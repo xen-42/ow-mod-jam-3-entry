@@ -37,7 +37,7 @@ internal class PartyHandler : MonoBehaviour
                     var other = parent.GetComponent<FacePlayerWhenTalking>();
 
                     // Don't invite Granite to their own party
-                    if (dialogue.transform.GetPath() == "Gravelrock_Body/Sector/Granite/GraniteAnim/GraniteConversation") continue;
+                    if (dialogue.transform.GetPath().Contains("Gravelrock_Body/Sector/Granite")) continue;
 
                     if (nomai != null || traveler != null || hearthian != null || other != null)
                     {
