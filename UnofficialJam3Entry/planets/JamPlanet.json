@@ -355,8 +355,8 @@
         }
       },
       {
-        "rename": "SecretRecording",
-        "path": "Moon_Body/Sector_THM/Interactables_THM/Prefab_HEA_Recorder",
+        "rename": "ExplosionRoot",
+        "path": "",
         "position": {
           "x": -94.72735,
           "y": 34.2506,
@@ -369,10 +369,22 @@
         }
       },
       {
-        "rename": "Explosion",
-        "path": "Ship_Body/Effects/Explosion_Ship",
-        "parentPath": "Sector/SecretRecording",
+        "rename": "SecretRecording",
+        "path": "Moon_Body/Sector_THM/Interactables_THM/Prefab_HEA_Recorder",
+        "parentPath": "Sector/ExplosionRoot",
         "isRelativeToParent": true
+      },
+      {
+        "rename": "Explosion",
+        "path": "Ship_Body/Effects",
+        "removeChildren": [ "ShockLayerEffect_Ship" ],
+        "position": {
+          "y": -1
+        },
+        "parentPath": "Sector/ExplosionRoot",
+        "isRelativeToParent": true,
+        "scale": 0.5,
+        "keepLoaded": true
       }
     ],
     "scatter": [
@@ -449,7 +461,7 @@
           "y": 0,
           "z": 0
         },
-        "pathToAnimController": "Sector/SecretRecording",
+        "pathToAnimController": "Sector/ExplosionRoot/SecretRecording",
         "isRelativeToParent": true,
         "xmlFile": "planets/text/SecretRecording.xml"
       }

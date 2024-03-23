@@ -18,7 +18,9 @@ internal static class DialogueConditionHandler
     {
         if (DialogueConditionManager.SharedInstance.GetConditionState("SecretRecordingKaboom"))
         {
-            GameObject.Find("Gravelrock_Body/Sector/SecretRecording/Explosion").GetComponent<ExplosionController>().Play();
+            GameObject.Find("Gravelrock_Body/Sector/ExplosionRoot/Explosion").GetComponentInChildren<ExplosionController>().Play();
+            GameObject.Find("Gravelrock_Body/Sector/ExplosionRoot/Explosion").GetComponentInChildren<OWAudioSource>().PlayOneShot(AudioType.ShipDamageShipExplosion);
+            GameObject.Find("Gravelrock_Body/Sector/ExplosionRoot/SecretRecording").gameObject.SetActive(false);
         }
     }
 }
