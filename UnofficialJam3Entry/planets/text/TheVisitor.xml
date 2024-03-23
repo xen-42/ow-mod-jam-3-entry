@@ -7,7 +7,9 @@
     <Dialogue>
       <Page>Hello.</Page>
     </Dialogue>
-
+    <RevealFacts>
+      <FactID>GRANITE_VISITOR_FACT</FactID>
+    </RevealFacts>
     <DialogueTarget>Menu</DialogueTarget>
   </DialogueNode>
 

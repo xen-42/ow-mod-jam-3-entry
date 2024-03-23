@@ -11,7 +11,7 @@
     "semiMajorAxis": 200,
     "isTidallyLocked": true,
     "dottedOrbitLine": true,
-    "orbitLineFadeEndDistance": 1000
+    "orbitLineFadeStartDistance": 3000
   },
   "Props": {
     "details": [
@@ -30,7 +30,8 @@
         "identificationRadius": 30,
         "frequency": "Comms Network",
         "onlyAudibleToScope": true,
-        "name": "Communication Satellite"
+        "name": "Gravelrock Satellite",
+        "reveals": "GRAVELROCK_SATELLITE_IDENTIFIED_EXPLORE_FACT"
       }
     ]
   },

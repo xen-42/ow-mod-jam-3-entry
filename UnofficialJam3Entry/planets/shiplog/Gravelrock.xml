@@ -15,7 +15,90 @@
       <RumorName>Granite's Birthday Party</RumorName>
       <Text>It's Granite's birthday! They want me to invite their friends.</Text>
     </RumorFact>
+  </Entry>
 
+  <!-- This entry is for the friends on the planet -->
+  <Entry>
+    <ID>GRAVELROCK_FRIENDS_ROOT</ID>
+    <Name>Granite's Friends</Name>
+    <Curiosity>GRANITE_CURIOSITY</Curiosity>
+
+    <RumorFact>
+      <ID>GRANITE_SATELLITE_RUMOR_FACT</ID>
+      <SourceID>GRANITE_ROOT</SourceID>
+      <RumorName>Gravelrock Satellite</RumorName>
+      <Text>Granite uses a satellite to communicate with friends.</Text>
+    </RumorFact>
+
+    <ExploreFact>
+      <ID>GRAVELROCK_SATELLITE_IDENTIFIED_EXPLORE_FACT</ID>
+      <Text>Granite's friends are scattered around Gravelrock! I need to invite them to the party.</Text>
+    </ExploreFact>
+
+    <Entry>
+      <ID>ERNESTO</ID>
+      <Name>Ernesto</Name>
+      <Curiosity>GRANITE_CURIOSITY</Curiosity>
+      <ExploreFact>
+        <ID>GRANITE_ERNESTO_FACT</ID>
+        <Text>I met Ernesto, the magic talking anglerfish.</Text>
+      </ExploreFact>
+    </Entry>
+
+    <Entry>
+      <ID>THE_VISITOR</ID>
+      <Name>The Visitor</Name>
+      <Curiosity>GRANITE_CURIOSITY</Curiosity>
+      <ExploreFact>
+        <ID>GRANITE_VISITOR_FACT</ID>
+        <Text>I met one of the inhabitants of the Stranger, near the north pole.</Text>
+      </ExploreFact>
+    </Entry>
+
+    <Entry>
+      <ID>CAULIFLOWER</ID>
+      <Name>Cauliflower</Name>
+      <Curiosity>GRANITE_CURIOSITY</Curiosity>
+      <ExploreFact>
+        <ID>GRANITE_NOMAI_FACT</ID>
+        <Text>I met a Nomai beside their shuttle in a dormant volcano.</Text>
+      </ExploreFact>
+    </Entry>
+
+    <Entry>
+      <ID>QUARTZ</ID>
+      <Name>Quartz</Name>
+      <Curiosity>GRANITE_CURIOSITY</Curiosity>
+      <ExploreFact>
+        <ID>GRANITE_HEARTHIAN_FACT</ID>
+        <Text>I met a Hearthian named Quartz.</Text>
+      </ExploreFact>
+    </Entry>
+  </Entry>
+
+  <Entry>
+    <ID>ERNESTOS_BIG_SECRET</ID>
+    <Name>Ernesto's Biggest Secret</Name>
+    <Curiosity>GRANITE_CURIOSITY</Curiosity>
+
+    <RumorFact>
+      <ID>ERNESTOS_BIG_SECRET_RUMOR</ID>
+      <RumorName>Ernesto's big secret</RumorName>
+      <Text>I asked Ernesto about their biggest secret of all time. For some reason. He said it's on the planet!</Text>
+    </RumorFact>
+
+    <ExploreFact>
+      <ID>ERNESTOS_SECRET_RECORDING_EXPLORE_FACT</ID>
+      <Text>I found Ernesto's secret recording! It said it would self destruct, but it didn't.</Text>
+    </ExploreFact>
+    <ExploreFact>
+      <ID>ERNESTOS_SECRET_RECORDING_EXPLORE_FACT_2</ID>
+      <Text>Okay it did explode, that hurt! I should ask Ernesto about what his deal is.</Text>
+    </ExploreFact>
+    <ExploreFact>
+      <ID>ERNESTOS_SECRET_RECORDING_EXPLORE_FACT_3</ID>
+      <Text>I asked Ernesto about the recording and he beat me to death with a rock.</Text>
+    </ExploreFact>
   </Entry>
 
 </AstroObjectEntry>

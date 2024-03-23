@@ -7,7 +7,9 @@
     <Dialogue>
       <Page>Hey it's me actual-real-canonical Ernesto, the magic talking anglerfish.</Page>
     </Dialogue>
-
+    <RevealFacts>
+      <FactID>GRANITE_ERNESTO_FACT</FactID>
+    </RevealFacts>
     <DialogueTarget>Menu</DialogueTarget>
   </DialogueNode>
 
@@ -67,6 +69,9 @@
       <Page>But also yes, it's hidden here on this very planet, hiding in plain sight, or something!</Page>
       <Page>Good luck!</Page>
     </Dialogue>
+    <RevealFacts>
+      <FactID>ERNESTOS_BIG_SECRET_RUMOR</FactID>
+    </RevealFacts>
     <DialogueTarget>Menu</DialogueTarget>
   </DialogueNode>
 
@@ -78,6 +83,9 @@
       <Page>I'm going to kill you now!</Page>
     </Dialogue>
     <SetCondition>ErnestoKilledYou</SetCondition>
+    <RevealFacts>
+      <FactID>ERNESTOS_SECRET_RECORDING_EXPLORE_FACT_3</FactID>
+    </RevealFacts>
   </DialogueNode>
 
 </DialogueTree>

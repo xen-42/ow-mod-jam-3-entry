@@ -75,6 +75,10 @@
       <Page>Here, I'll try and transmit to them. I can't hear any responses, but maybe you'll be able to.</Page>
     </Dialogue>
     <SetCondition>KnowsItsGranitesBirthday</SetCondition>
+    <RevealFacts>
+      <FactID>GRANITE_RUMOR_FACT</FactID>
+      <FactID>GRANITE_SATELLITE_RUMOR_FACT</FactID>
+    </RevealFacts>
   </DialogueNode>
 
   <DialogueNode>

@@ -7,7 +7,9 @@
     <Dialogue>
       <Page>Oh hey, how's it going?</Page>
     </Dialogue>
-
+    <RevealFacts>
+      <FactID>GRANITE_NOMAI_FACT</FactID>
+    </RevealFacts>
     <DialogueTarget>Menu</DialogueTarget>
   </DialogueNode>
 
