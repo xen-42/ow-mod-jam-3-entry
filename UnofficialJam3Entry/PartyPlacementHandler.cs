@@ -79,19 +79,7 @@ internal class PartyPlacementHandler : MonoBehaviour
             var newPartygoer = UnofficialJam3Entry.NHAPI.SpawnObject(_rootSector.parent.gameObject, _rootSector.GetComponent<Sector>(), partygoer.transform.GetPath(), 
                 pos, localRotation, partygoer.transform.localScale.x, false);
 
-            // NH is turning the colliders off sometimes for some reason?
-            foreach (var collider in newPartygoer.GetComponentsInChildren<OWCollider>())
-            {
-                collider.enabled = true;
-                collider._collider.enabled = true;
-            }
-
-            // FacePlayerWhenTalking is also getting goofy
-            if (newPartygoer.GetComponent<FacePlayerWhenTalking>() is FacePlayerWhenTalking facePlayerWhenTalking)
-            {
-                facePlayerWhenTalking._origLocalRotation = facePlayerWhenTalking.transform.localRotation;
-                facePlayerWhenTalking._targetLocalRotation = facePlayerWhenTalking.transform.localRotation;
-            }
+            UnofficialJam3Entry.Helper.Events.Unity.FireOnNextUpdate(() => FixStuff(newPartygoer));
 
             partygoer.gameObject.SetActive(false);
         }
@@ -100,6 +88,28 @@ internal class PartyPlacementHandler : MonoBehaviour
             UnofficialJam3Entry.WriteDebug($"Failed to move {partygoer.name} to the party! {e}");
             partygoer.gameObject.SetActive(false);
             DialogueConditionManager.SharedInstance.SetConditionState("FailedToPlacePartygoer", true);
+        }
+    }
+
+    private void FixStuff(GameObject newPartygoer)
+    {
+        // NH is turning the colliders off sometimes for some reason?
+        foreach (var collider in newPartygoer.GetComponentsInChildren<OWCollider>(true))
+        {
+            collider.enabled = true;
+            collider._collider.enabled = true;
+        }
+
+        foreach (var shape in newPartygoer.GetComponentsInChildren<Shape>(true))
+        {
+            shape.enabled = true;
+        }
+
+        // FacePlayerWhenTalking is also getting goofy
+        if (newPartygoer.GetComponent<FacePlayerWhenTalking>() is FacePlayerWhenTalking facePlayerWhenTalking)
+        {
+            facePlayerWhenTalking._origLocalRotation = facePlayerWhenTalking.transform.localRotation;
+            facePlayerWhenTalking._targetLocalRotation = facePlayerWhenTalking.transform.localRotation;
         }
     }
 }

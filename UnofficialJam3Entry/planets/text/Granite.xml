@@ -179,10 +179,18 @@
     <Dialogue>
       <Page>Thanks for gathering up everyone! Let's get this party started!</Page>
     </Dialogue>
-    <SetCondition>TriggerGraniteParty</SetCondition>
-    <RevealFacts>
-      <FactID>GRANITE_PARTY_THROWN_EXPLORE_FACT</FactID>
-    </RevealFacts>
+    
+    <DialogueOptionsList>
+      <DialogueOption>
+        <Text>I'm ready!</Text>
+        <DialogueTarget>TriggerParty</DialogueTarget>
+      </DialogueOption>
+      <DialogueOption>
+        <Text>Wait, not yet.</Text>
+        <DialogueTarget>GraniteMenu</DialogueTarget>
+      </DialogueOption>
+    </DialogueOptionsList>
+
   </DialogueNode>
 
   <DialogueNode>
@@ -190,6 +198,36 @@
     <Dialogue>
       <Page>Wow so many people! I've never had so many people show up to my birthday party!</Page>
       <Page>Let's get this party started!</Page>
+    </Dialogue>
+
+    <DialogueOptionsList>
+      <DialogueOption>
+        <Text>I'm ready!</Text>
+        <DialogueTarget>TriggerBigParty</DialogueTarget>
+      </DialogueOption>
+      <DialogueOption>
+        <Text>Wait, not yet.</Text>
+        <DialogueTarget>GraniteMenu</DialogueTarget>
+      </DialogueOption>
+    </DialogueOptionsList>
+    
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>TriggerParty</Name>
+    <Dialogue>
+      <Page>Hooray!</Page>
+    </Dialogue>
+    <SetCondition>TriggerGraniteParty</SetCondition>
+    <RevealFacts>
+      <FactID>GRANITE_PARTY_THROWN_EXPLORE_FACT</FactID>
+    </RevealFacts>
+  </DialogueNode>
+
+  <DialogueNode>
+    <Name>TriggerBigParty</Name>
+    <Dialogue>
+      <Page>Hooray!</Page>
     </Dialogue>
     <SetCondition>TriggerGraniteBigParty</SetCondition>
     <RevealFacts>

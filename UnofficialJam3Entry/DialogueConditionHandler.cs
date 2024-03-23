@@ -22,16 +22,5 @@ internal static class DialogueConditionHandler
             GameObject.Find("Gravelrock_Body/Sector/ExplosionRoot/Explosion").GetComponentInChildren<OWAudioSource>().PlayOneShot(AudioType.ShipDamageShipExplosion);
             GameObject.Find("Gravelrock_Body/Sector/ExplosionRoot/SecretRecording").gameObject.SetActive(false);
         }
-
-        if (DialogueConditionManager.SharedInstance.GetConditionState("TriggerGraniteParty"))
-        {
-            // TODO: ending
-
-        }
-        if (DialogueConditionManager.SharedInstance.GetConditionState("TriggerGraniteBigParty"))
-        {
-            // TODO: ending
-
-        }
     }
 }

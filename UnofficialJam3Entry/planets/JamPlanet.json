@@ -17,10 +17,15 @@
   "Atmosphere": {
     "hasTrees": true,
     "useAtmosphereShader": true,
-    "fogSize": 150,
-    "fogDensity": 0.1,
+    "fogSize": 120,
+    "fogDensity": 1,
     "hasOxygen": true,
-    "size": 150
+    "size": 150,
+    "atmosphereTint": {
+      "r": 100,
+      "g": 100,
+      "b": 100
+    }
   },
   "AmbientLights": [
     {
@@ -177,6 +182,22 @@
         "isRelativeToParent": true,
         "rename": "GraniteAnim"
       },
+      {
+        "path": "",
+        "parentPath": "Sector/Granite",
+        "isRelativeToParent": true,
+        "rename": "BigPartyConditionalVolume",
+        "activationCondition": "TriggerGraniteBigParty",
+        "keepLoaded": true
+      },
+      {
+        "path": "",
+        "parentPath": "Sector/Granite",
+        "isRelativeToParent": true,
+        "rename": "PartyConditionalVolume",
+        "activationCondition": "TriggerGraniteParty",
+        "keepLoaded": true
+      },
       // Hal and ship
       {
         "path": "GabbroShip_Body/Sector_GabbroShip",
@@ -238,7 +259,8 @@
         "parentPath": "Sector/Ernesto",
         "isRelativeToParent": true,
         "activationCondition": "ErnestoKilledYou",
-        "blinkWhenActiveChanged": false
+        "blinkWhenActiveChanged": false,
+        "keepLoaded": true
       },
       // Cauliflower
       {
@@ -482,6 +504,22 @@
         "radius": 20,
         "gameOverText": "Ernesto beat you to death with a rock.",
         "deathType": "crushedByElevator",
+        "isRelativeToParent": true
+      },
+      {
+        "creditsType": "fast",
+        "parentPath": "Sector/Granite/PartyConditionalVolume",
+        "radius": 20,
+        "gameOverText": "You all had a great party for Granite's birthday!",
+        "deathType": "meditation",
+        "isRelativeToParent": true
+      },
+      {
+        "creditsType": "fast",
+        "parentPath": "Sector/Granite/BigPartyConditionalVolume",
+        "radius": 20,
+        "gameOverText": "You all had a super-duper great party for Granite's birthday, with people across the solar system!",
+        "deathType": "meditation",
         "isRelativeToParent": true
       }
     ]
