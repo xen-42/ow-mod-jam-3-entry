@@ -4,7 +4,7 @@
   "author": "xen",
   "name": "Granite's Invitation",
   "uniqueName": "xen.UnofficialJam3Entry",
-  "version": "0.1.0",
-  "owmlVersion": "2.9.0",
+  "version": "1.0.0",
+  "owmlVersion": "2.11.1",
   "dependencies": [ "xen.NewHorizons", "xen.ModJam3" ]
 }
