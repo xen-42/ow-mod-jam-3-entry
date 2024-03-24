@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace UnofficialJam3Entry;
 
@@ -16,11 +11,16 @@ internal static class DialogueConditionHandler
 
     private static void OnExitConversation()
     {
+        if (UnofficialJam3Entry.NHAPI.GetCurrentStarSystem() != "Jam3")
+        {
+            return;
+        }
+
         if (DialogueConditionManager.SharedInstance.GetConditionState("SecretRecordingKaboom"))
         {
-            GameObject.Find("Gravelrock_Body/Sector/ExplosionRoot/Explosion").GetComponentInChildren<ExplosionController>().Play();
-            GameObject.Find("Gravelrock_Body/Sector/ExplosionRoot/Explosion").GetComponentInChildren<OWAudioSource>().PlayOneShot(AudioType.ShipDamageShipExplosion);
-            GameObject.Find("Gravelrock_Body/Sector/ExplosionRoot/SecretRecording").gameObject.SetActive(false);
+            GameObject.Find("Gravelrock_Body/Sector/ExplosionRoot/Explosion")?.GetComponentInChildren<ExplosionController>()?.Play();
+            GameObject.Find("Gravelrock_Body/Sector/ExplosionRoot/Explosion")?.GetComponentInChildren<OWAudioSource>()?.PlayOneShot(AudioType.ShipDamageShipExplosion);
+            GameObject.Find("Gravelrock_Body/Sector/ExplosionRoot/SecretRecording")?.gameObject?.SetActive(false);
         }
     }
 }
