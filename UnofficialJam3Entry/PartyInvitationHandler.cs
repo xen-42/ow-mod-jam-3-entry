@@ -1,5 +1,4 @@
-﻿using Epic.OnlineServices.Platform;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +20,12 @@ internal class PartyInvitationHandler : MonoBehaviour
 
     private PartyPlacementHandler _placementHandler;
 
+    public static List<GameObject> ActiveSignals { get; private set; }
+
     public void Start()
     {
+        ActiveSignals = new();
+
         _placementHandler = this.GetComponent<PartyPlacementHandler>();
 
         // CharacterDialogueTrees are late initialized
@@ -207,10 +210,21 @@ internal class PartyInvitationHandler : MonoBehaviour
         // Clean up the temp asset
         GameObject.Destroy(tempGameObject);
 
-        var signal = UnofficialJam3Entry.NHAPI.SpawnSignal(UnofficialJam3Entry.Instance, root, "ToolProbeFlight_LP", uniqueName, "Comms Network", detectionRadius: 0);
+        // For my mod we use the regular sound but for other mods go wacky with it
+        // Might help the overlapping sounds bc rn they constructive interfere and blow ur eardrums out
+        var onGravelRock = dialogue.GetAttachedOWRigidbody().name == "Gravelrock_Body";
+
+        var audioEnums = Enum.GetValues(typeof(AudioType));
+        var audio = onGravelRock ? "ToolProbeFlight_LP" : audioEnums.GetValue(UnityEngine.Random.Range(0, audioEnums.Length)).ToString();
+        var signal = UnofficialJam3Entry.NHAPI.SpawnSignal(UnofficialJam3Entry.Instance, root, audio, uniqueName, "Comms Network", detectionRadius: 0);
         signal.transform.parent = root.transform;
         signal.transform.localPosition = Vector3.zero;
-        signal.gameObject.AddComponent<PartyInvitationSignal>();
+        if (onGravelRock)
+        {
+            // Make sure ours are always on at the start
+            ActiveSignals.Add(signal.gameObject);
+        }
+        signal.gameObject.AddComponent<PartyInvitationSignal>().disableCondition = uniqueCondition;
 
         _uniqueIDs.Add(uniqueName);
         _invitationIDs[uniqueCondition] = root;
